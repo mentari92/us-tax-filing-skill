@@ -1,0 +1,14 @@
+# Local/private tax and banking records
+*.pdf
+*.xlsx
+*.xls
+*.csv
+*.json
+*.png
+*.jpg
+*.jpeg
+*.key
+*.pem
+.env
+.env.*
+.DS_Store
