@@ -558,6 +558,153 @@ Evidence collection
 ```
 
 Any missing critical evidence moves the case back to **Evidence collection**. Any conflicting classification evidence moves it to **Escalate for targeted review**.
+## End-to-end filing mode
+
+Use this mode when the user asks to be guided from documents through submission. The agent must not stop after explaining the form. It must move the case through each state, record what is complete, and identify the exact blocker when it cannot proceed.
+
+### Stage 0 — Open the filing case
+
+Create a case header containing:
+
+- taxpayer/entity name, redacted in chat where practical;
+- tax year and tax-year end;
+- jurisdiction: federal, New Mexico, owner country, and payer/platform;
+- filing objective;
+- forms under review;
+- source-folder path;
+- current official form revision;
+- internal due date and official deadline to re-check.
+
+Do not start filling a PDF until the tax year and form revision are confirmed.
+
+### Stage 1 — Build the filing decision
+
+Deliver a one-page decision memo:
+
+- **Confirmed:** supported by a source;
+- **Conditional:** depends on an assumption;
+- **Unknown:** record is missing;
+- **Not applicable:** reason documented;
+- **Escalate:** fact requires specialist review.
+
+The memo must state why each candidate form is included or excluded. “No revenue” is not a classification decision and is not enough to exclude Form 5472.
+
+### Stage 2 — Freeze the evidence set
+
+Create an evidence index before entering numbers:
+
+| Field/amount | Proposed value | Source file | Page/line | Calculation | Status |
+|---|---|---|---|---|---|
+
+Freeze the source set with a date. If a source is replaced, record the replacement and recalculate affected fields. Do not silently update a value after review.
+
+### Stage 3 — Reconcile the ledger
+
+Close the annual ledger before form entry:
+
+- every bank/Wise/Apple payout has a source report;
+- gross proceeds, fees, refunds, taxes, and net deposits reconcile;
+- owner contributions, distributions, loans, reimbursements, and paid-on-behalf expenses are separate;
+- foreign-currency amounts have a documented exchange-rate method;
+- each related-party transaction has a candidate Form 5472 part/line;
+- differences have a written explanation or remain **Needs source**.
+
+### Stage 4 — Prepare the field map
+
+For every form line, record:
+
+1. line number and label from the current form;
+2. proposed entry;
+3. source and page;
+4. calculation or legal basis;
+5. whether the line is required, conditional, or skipped;
+6. unresolved question;
+7. reviewer status.
+
+The agent may populate non-signature fields in a draft PDF when the current blank form is supplied and the runtime supports PDF editing. It must not add or imitate a signature, certification, PIN, checkbox declaration, or date of signature.
+
+### Stage 5 — Run quality control
+
+Before asking the user to sign, perform four checks:
+
+1. **Identity check:** name, address, entity status, tax ID placement, and tax year agree with evidence.
+2. **Arithmetic check:** totals, subtotals, currency conversions, and attachments agree.
+3. **Classification check:** the form matches the decision memo; no W-9 or treaty claim is used for convenience.
+4. **Submission check:** current instructions, filing method, address/portal, deadline, signature requirements, and extension code are verified.
+
+Generate a review list showing every changed field and every field left blank intentionally.
+
+### Stage 6 — User review and authorization
+
+The agent must present:
+
+- completed draft or field map;
+- unresolved issues;
+- calculations;
+- source index;
+- submission method;
+- deadline;
+- consequences of certification;
+- exact action requested from the user.
+
+The case can move to **User authorized** only after the user explicitly confirms the draft and the intended submission. The user's approval to prepare a form is not automatically approval to submit it.
+
+### Stage 7 — Signature and submission
+
+Use the channel required by the current official instructions:
+
+- **W-8BEN/W-8BEN-E/W-8ECI:** give to the requesting payer, platform, bank, or withholding agent; do not send it to the IRS as an annual income-tax return.
+- **Form 5472 plus pro forma Form 1120 for a foreign-owned U.S. DE:** use the current dedicated IRS fax or mailing method; do not assume ordinary Form 1120 e-file or mailing instructions apply.
+- **Form 7004:** use the method and correct return code in current instructions, before the original due date.
+- **Full Form 1120 or Form 1040-NR:** use the current IRS e-file or paper method allowed for the specific taxpayer and tax year.
+- **New Mexico returns:** use the current NM Taxation and Revenue Department portal or paper process and the filing frequency assigned to the account.
+- **Apple/payment-platform forms:** follow the platform's current portal workflow and save the exact confirmation.
+
+If browser automation or another submission tool is available, it may be used only after the user authorizes the specific action and sees the final document. The agent must pause before the irreversible submit button, final electronic certification, fax transmission, or mailing action unless the user has explicitly authorized that exact step.
+
+### Stage 8 — Archive proof and close the case
+
+Do not mark a filing “submitted” based on a screenshot of a completed draft. Archive:
+
+- final signed copy;
+- exact attachments;
+- submission date/time and time zone;
+- portal receipt, e-file acceptance, fax confirmation, certified-mail receipt, or platform case number;
+- payment confirmation, if applicable;
+- extension confirmation, if applicable;
+- version of instructions used;
+- next deadline and follow-up action.
+
+Use these final states:
+
+```text
+Draft only
+Ready for user review
+User authorized
+Signed — not submitted
+Submitted — proof pending
+Submitted — proof archived
+Rejected or incomplete — correction required
+Escalated for targeted review
+```
+
+### Failure handling
+
+If the portal rejects a form, the fax fails, the mailing is returned, a payment fails, or the IRS/NM TRD issues a notice:
+
+1. preserve the rejection or notice unchanged;
+2. do not submit a second copy blindly;
+3. identify the exact rejected field, attachment, or channel;
+4. check the current official instructions;
+5. update the field map and submission log;
+6. recalculate affected amounts;
+7. obtain user approval for the corrected submission;
+8. escalate if the correction changes classification, tax, penalty, treaty, or filing position.
+
+### End-to-end completion standard
+
+The skill is complete for a filing only when it has produced a decision memo, evidence index, reconciled ledger, field map, draft, quality-control result, user-review record, submission plan, and proof archive—or has clearly documented the precise missing prerequisite. It must never claim “done” while only a blank or partially filled form exists.
+
 
 
 ## Required response format

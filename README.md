@@ -45,9 +45,9 @@ Keep the actual tax documents outside the repository.
 - “Create a deadline calendar and identify missing evidence for my first tax year.”
 ## AI tax-agent mode
 
-The skill can be used as a controlled AI tax-preparation agent. It can read private source records, build a classification decision tree, reconcile transactions, map form fields, draft unsigned forms, create a deadline calendar, and produce a submission-proof checklist.
+The skill can be used as a controlled AI tax-preparation agent. It can read private source records, build a classification decision tree, reconcile transactions, map form fields, create unsigned drafts, run quality checks, create a deadline calendar, guide the user through the required submission channel, and archive submission proof.
 
-For a likely calendar-year foreign-owned U.S. disregarded entity, it screens the annual Form 5472 plus pro forma Form 1120 path, Form 7004 extension, W-8/W-9 status, Form 1040-NR triggers, and New Mexico filing obligations. It does not sign, certify, submit, or hide unresolved facts.
+It supports an end-to-end state flow: evidence collection, classification, reconciliation, draft form, quality check, user review, authorization, signature, submission, and proof archive. It pauses before an irreversible submit, certification, fax, or mailing action unless the user explicitly authorizes that exact step. It does not sign for the user, certify under penalty of perjury, or hide unresolved facts.
 
 ## Annual self-service workflow
 
