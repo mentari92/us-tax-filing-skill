@@ -1,6 +1,6 @@
 # US Tax Filing Skill
 
-A task-oriented OMP/GitHub Agent Skill for founders who need to prepare U.S. federal and New Mexico tax records without paying for a full-service tax consultant.
+A task-oriented AI tax-preparation skill for founders who need to prepare U.S. federal and New Mexico tax records without paying for a full-service tax consultant.
 
 The skill is designed for evidence-first self-service preparation. It helps a founder understand classification, collect records, reconcile transactions, map form fields, prepare drafts, and create a clean package for filing or targeted professional review.
 
@@ -25,13 +25,15 @@ The skill is designed for evidence-first self-service preparation. It helps a fo
 
 ## Installation
 
-### GitHub Agent Skills
+### GitHub-based agent
 
-Copy `.github/skills/us-tax-filing/` into a project repository. The skill is discovered from the standard `.github/skills/<name>/SKILL.md` location.
+Copy `.github/skills/us-tax-filing/` into an agent project that supports the `.github/skills/<name>/SKILL.md` convention.
 
-### OMP user skill
+### Other LLMs and agent frameworks
 
-Copy the same skill directory into the user's configured OMP/Agent Skills directory. Keep the actual tax documents outside the repository.
+The skill is plain Markdown with YAML frontmatter and contains no vendor-specific API calls. Any LLM can use it when the file is supplied as a system/developer instruction or loaded by an agent framework. Automatic discovery depends on that framework's directory convention; a GitHub repository by itself does not make every LLM load the skill automatically.
+
+Keep the actual tax documents outside the repository.
 
 ## Example requests
 
