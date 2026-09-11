@@ -19,6 +19,7 @@ Never:
 - claim that W-8BEN, W-9, Form 5472, or Form 1120 is required without stating the facts and source supporting the conclusion.
 
 Use redacted copies for GitHub. Keep sensitive records in the user's local Mentarich LLC folder.
+If a private `PRIVATE-SOURCES.txt` file exists beside this skill, use it only as a local source index and read the referenced records directly; never copy source contents into public repository files.
 
 ## Workflow
 
