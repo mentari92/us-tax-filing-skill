@@ -1,6 +1,6 @@
 ---
 name: us-tax-filing
-description: US Tax Filing Skill for founders and foreign-owned New Mexico single-member LLCs. Use to classify an LLC, decide which U.S. and New Mexico forms may apply, prepare field-by-field W-8/W-9, Form 5472, pro forma Form 1120, Form 8832, Form 7004, Form 1040-NR, payroll, information-return, and New Mexico registration checklists, reconcile Apple/payment/bank records, and produce a submission-ready evidence package. Never invent tax facts, sign forms for the user, submit filings without explicit approval, or expose private records.
+description: US Tax Filing Skill for founders and foreign-owned New Mexico single-member LLCs. Use to classify an LLC, decide which U.S. and New Mexico forms may apply, prepare field-by-field W-8/W-9, Form 5472, pro forma Form 1120, Form 8832, Form 7004, Form 1040-NR, payroll, information-return, and New Mexico registration checklists, reconcile Apple App Store, Google Play Android, Stripe, Wise, and bank records, and produce a submission-ready evidence package. Never invent tax facts, sign forms for the user, submit filings without explicit approval, or expose private records.
 ---
 
 # US Tax Filing Skill
@@ -48,7 +48,7 @@ Use a three-pass process. Do not start by typing into a form.
 ### Pass 2 — Reconciliation
 
 1. Build a transaction ledger before calculating totals.
-2. Reconcile Apple sales/proceeds reports to Apple payouts, Wise/bank deposits, fees, refunds, taxes, and foreign-exchange conversion.
+2. Reconcile Apple App Store, Google Play Android, Stripe, and other platform sales/proceeds reports to payouts, Wise/bank deposits, fees, refunds, taxes, chargebacks, disputes, and foreign-exchange conversion.
 3. Identify every owner-to-LLC and LLC-to-owner movement: contribution, distribution, loan, reimbursement, service, IP transfer, or mixed/personal payment.
 4. Identify related parties and classify each transaction by counterparty, not by bank account label.
 5. Tie each number in a proposed form to a source record and calculation.
@@ -216,9 +216,9 @@ Before preparing the return package, collect:
 8. Owner-paid LLC expenses.
 9. Reimbursements and distributions.
 10. Owner/LLC loans and interest.
-11. Apple or marketplace sales/proceeds reports.
-12. Apple or marketplace payout reports.
-13. Wise, bank, and payment-processor statements.
+11. Apple App Store, Google Play, and other marketplace sales/proceeds reports.
+12. Apple, Google Play, Stripe, and other platform payout reports.
+13. Wise, bank, Stripe balance-transaction, and payment-processor statements.
 14. Fees, refunds, chargebacks, withholding, and foreign exchange records.
 15. Contracts and invoices with related parties.
 16. IP, software, domain, or asset transfers.
@@ -385,20 +385,152 @@ A classification election can change future filing obligations. If the user is d
 
 A foreign owner of a disregarded LLC may need an individual U.S. return if the owner's facts create a U.S. trade or business, ECI, U.S.-source income, or another filing trigger. Form 1040-NR is for nonresident alien individuals, estates, and trusts that meet the applicable filing conditions.
 
-Do not assume that the LLC's state of formation, Apple account, bank account, or U.S. registered agent alone proves that the owner must or must not file Form 1040-NR. Analyze services location, agents, U.S. activity, income source, treaty position, and withholding records.
+Do not assume that the LLC's state of formation, Apple App Store account, Google Play account, Stripe account, bank account, or U.S. registered agent alone proves that the owner must or must not file Form 1040-NR. Analyze services location, agents, U.S. activity, income source, treaty position, and withholding records.
+## Client geography, service location, and owner-country reporting
 
-## Apple and payment-platform workflow
+Do not decide U.S. tax treatment from the client's country alone. For personal services and business income from personal services, the primary U.S. source rule is generally **where the services are physically performed**. Client location, contract location, invoice currency, bank location, and payment route do not by themselves determine the source.
 
-For Apple, Stripe, Wise, marketplaces, and similar payers:
+### Client and service-location matrix
 
-1. Save the exact tax-form request and account legal-name configuration.
+| Client | Where founder performs the work | U.S. source result | U.S. filing screen |
+|---|---|---|---|
+| U.S. client | Indonesia or another country outside the U.S. | Generally foreign-source personal-service income | Usually no U.S. tax on that service income solely because the client is American; provide appropriate W-8 documentation when requested |
+| Non-U.S. client | Indonesia or another country outside the U.S. | Generally foreign-source personal-service income | Usually no U.S. tax on that service income solely because the LLC is domestic; owner-country reporting still applies |
+| U.S. client | Physically in the U.S. | Generally U.S.-source for the services performed in the U.S. | Screen U.S. trade/business, ECI, Form 1040-NR, Form W-8ECI, withholding, and travel-day records |
+| Non-U.S. client | Physically in the U.S. | Generally U.S.-source for the services performed in the U.S. | Same U.S. activity and ECI screen; foreign client status does not make U.S.-performed services foreign-source |
+| Any client | Work split between U.S. and foreign countries | Allocate using actual service dates, location, and work performed | Keep a day-by-day travel and service log; do not allocate only by invoice or payment date |
+
+These are starting rules, not automatic conclusions. Royalties, software/IP licenses, dividends, interest, rents, inventory, digital products, and platform sales have different source rules. Classify the income before applying the personal-service rule.
+
+### U.S. client while working outside the U.S.
+
+For a foreign individual who is a nonresident alien and performs services entirely outside the United States:
+
+1. The service income is generally foreign-source for U.S. tax purposes.
+2. It is generally not subject to U.S. NRA withholding merely because the customer is a U.S. person.
+3. It is normally not reported on Form 1042-S as U.S.-source income.
+4. The client may request Form W-8BEN to document foreign status. Give the form to the requesting payer; do not send it to the IRS as an annual return.
+5. If the payment is effectively connected with a U.S. trade or business, the W-8BEN shortcut may be wrong; analyze Form W-8ECI and Form 1040-NR.
+
+Do not tell a U.S. client that no form is needed without checking its onboarding rules. The documentation form and the income-tax filing are separate questions.
+
+### Non-U.S. client while working outside the U.S.
+
+For services performed outside the United States for a non-U.S. client:
+
+1. The income is generally foreign-source for U.S. tax purposes.
+2. It is not converted into U.S.-source income just because the owner has a New Mexico LLC, EIN, Wise account, or U.S. registered agent.
+3. The income can still be business income attributable to the owner under the LLC's federal classification.
+4. The owner must report it in the country where the owner is tax resident under that country's rules.
+5. The LLC must still include the receipt in its books and screen whether any owner/related-party or other filing obligation exists.
+
+### Services physically performed in the U.S.
+
+If the founder performs services while physically present in the United States, record:
+
+- entry and exit dates;
+- work dates and work location;
+- client and contract;
+- service description;
+- amount attributable to U.S.-performed work;
+- visa/immigration status where relevant;
+- U.S. office, agent, employee, or fixed-place facts;
+- tax withheld and forms received.
+
+U.S.-performed personal services can create U.S.-source income and may be effectively connected with a U.S. trade or business. Screen Form 1040-NR, Form W-8ECI, withholding, estimated tax, treaty, and permanent-establishment issues. Do not use a W-8BEN solely because the founder remains a foreign citizen.
+
+### Foreign founder and U.S. LLC separation
+
+For a foreign-owned U.S. disregarded LLC:
+
+- ordinary income-tax activity is generally attributed to the owner under U.S. rules;
+- the LLC's Form 5472 analysis is separate from the owner's service-income source analysis;
+- receiving money from a U.S. client does not itself create a Form 5472 transaction;
+- an owner contribution, distribution, reimbursement, loan, owner-paid expense, service, or IP transfer can create a Form 5472 question;
+- the client country does not determine whether a related-party transaction exists;
+- if the LLC made a corporate election, stop using the disregarded-entity shortcut and analyze the corporation's Form 1120 path.
+
+### Indonesian founder or Indonesian tax resident
+
+Indonesian citizenship and Indonesian tax residence are not identical. First determine whether the owner is an Indonesian resident taxpayer under current Indonesian rules and any applicable treaty. If the owner is a Wajib Pajak Dalam Negeri, the owner generally reports worldwide income in the current Indonesian annual tax return process, including income from U.S. clients and non-U.S. clients.
+
+For an Indonesian resident owner:
+
+1. Report the relevant income from both U.S. and non-U.S. clients under the applicable Indonesian income classification.
+2. Keep contracts, invoices, platform statements, bank/Wise records, expense evidence, exchange rates, and tax-withholding certificates.
+3. Separate gross receipts, deductible business costs, platform fees, refunds, and owner distributions according to Indonesian rules.
+4. Track foreign tax actually paid or withheld by country and income type.
+5. Analyze PPh Pasal 24/Kredit Pajak Luar Negeri only for tax paid or accrued abroad that is creditable under current Indonesian rules and within the applicable limitation. Do not claim a credit just because a client is American.
+6. If services were performed in Indonesia for a U.S. client and no U.S. tax was withheld because the income was foreign-source for U.S. purposes, there may be no U.S. foreign-tax credit to claim in Indonesia; the income can still be reportable in Indonesia.
+7. If the owner is not an Indonesian resident taxpayer, do not apply the worldwide-income conclusion automatically; determine the applicable Indonesian nonresident rules.
+
+The U.S. LLC's books and the owner's Indonesian annual return are different reporting layers. Do not assume that money left in the LLC, money paid to the owner, or money received in a personal bank account automatically has the same treatment in both countries.
+
+### Client-income records required
+
+Add these columns to the private ledger:
+
+`client_name, client_country, payer_legal_entity, contract_type, income_character, service_country, service_date_start, service_date_end, days_in_US, work_location_evidence, invoice_currency, payment_currency, gross_amount, fees, refunds, withholding_country, withholding_form, foreign_tax_paid, U.S._source_screen, Indonesia_reporting_screen, evidence_path`
+
+For every client, retain:
+
+- signed contract or terms;
+- invoice and credit notes;
+- service description;
+- where the work was physically performed;
+- travel/day log;
+- payer legal entity and country;
+- payment statement and bank/Wise receipt;
+- taxes withheld and tax certificates;
+- exchange-rate source;
+- related-party relationship, if any.
+
+Never classify “U.S. client” as “U.S.-source” without checking service location and income character.
+
+
+## Apple, Google Play, Stripe, and payment-platform workflow
+
+Treat each platform as a separate source and counterparty. A payout is not automatically gross revenue, and a platform report is not automatically a Form 5472 related-party transaction. Classify the contractual payee, payer, platform legal entity, transaction type, and owner relationship before choosing a tax treatment.
+
+### Common platform controls
+
+For Apple App Store, Google Play Android, Stripe, Wise, marketplaces, and similar payers:
+
+1. Save the exact tax-form request, account legal-name configuration, developer/merchant profile, and contract or agreement.
 2. Identify whether the account is individual or organization and which entity/person is the payee.
-3. Download sales, proceeds, payment, fee, refund, tax, and withholding reports.
-4. Reconcile gross customer activity to platform proceeds and bank/Wise deposits.
-5. Determine whether the payer is requesting W-9, W-8BEN, W-8BEN-E, W-8ECI, or another form.
-6. Never select a U.S.-person certification only to make the portal accept the account.
-7. If the platform flow does not match the IRS documentation, prepare a concise support request explaining the facts without sending unnecessary identifiers.
-8. Keep the submitted form and platform response in the private records package.
+3. Download gross sales, proceeds, payment, fee, refund, tax, withholding, chargeback, dispute, and payout reports.
+4. Reconcile gross customer activity to platform net proceeds and Wise/bank deposits. Keep gross revenue, platform fees, taxes, refunds, and net cash separate.
+5. Identify the platform's contracting/legal entity and country for each report or payment stream.
+6. Determine whether the payer is requesting W-9, W-8BEN, W-8BEN-E, W-8ECI, Form 1099, or another form.
+7. Never select a U.S.-person certification only to make the portal accept the account.
+8. If the platform flow does not match the IRS documentation, prepare a concise support request explaining the facts without sending unnecessary identifiers.
+9. Keep the submitted form, platform report, platform response, and payout proof in the private records package.
+
+### Apple App Store
+
+Collect App Store Connect sales, proceeds, payments, financial, tax, agreement, fee, refund, and withholding records. Match the Apple contracting entity and payment month to each payout. Do not assume that the Apple account name, seller name, or U.S. account setting determines federal tax classification.
+
+### Google Play Android
+
+Collect Google Play Console earnings, estimated sales, transactions, payouts, refunds, chargebacks, taxes, service fees, withholding, payment profile, developer account, and tax-form records. Save the Google contracting entity/legal-entity details shown in the relevant report. Reconcile Google Play gross activity to the Google payout statement and then to the Wise/bank deposit.
+
+Do not treat a Google Play payout as the gross amount. Do not assume every Google entity is the same counterparty. Use the report period and payout currency, document the exchange-rate method, and screen whether any Google tax form or information return was issued.
+
+### Stripe
+
+Collect Stripe balance transactions, charges, payment intents where relevant, payouts, fees, refunds, disputes, chargebacks, tax reports, connected-account records, payment-method reports, and any Form 1099 or tax document. Reconcile:
+
+```text
+gross customer charges
+  − refunds and disputes
+  − Stripe processing/application fees
+  ± adjustments
+  = Stripe balance movement
+  → payout to Wise/bank
+```
+
+Do not record only the net Stripe payout as revenue. Keep Stripe fees and refunds separately supported. Determine whether Stripe is the payment processor, merchant of record, marketplace, or another intermediary for the relevant product and country. Do not assume Stripe's tax-form request controls the LLC's federal classification.
+If Stripe issues a Form 1099-K or another information return, preserve it and reconcile it to gross payment activity, refunds, fees, disputes, and payouts. Do not treat the form as a substitute for the ledger or automatically treat the reported gross amount as net taxable income.
 
 ## New Mexico workflow
 
@@ -420,7 +552,7 @@ Maintain a private folder with:
 
 - `01-Facts-and-Classification/` — formation, operating agreement, resolutions, EIN notice, elections, prior returns;
 - `02-Transactions/` — ledger and exchange-rate schedule;
-- `03-Revenue/` — Apple/platform reports and reconciliations;
+- `03-Revenue/` — Apple, Google Play, Stripe, marketplace reports, payouts, and reconciliations;
 - `04-Expenses/` — receipts, invoices, business purpose, reimbursements;
 - `05-Owner-Related/` — contributions, distributions, loans, services, IP, personal payments;
 - `06-Forms/` — unsigned drafts, signed submissions, confirmations;
@@ -529,7 +661,7 @@ The agent may produce:
 - reconciliation workbooks;
 - source and evidence indexes;
 - deadline calendars;
-- questions for Apple, IRS, New Mexico TRD, or a targeted reviewer;
+- questions for Apple, Google Play, Stripe, IRS, New Mexico TRD, or a targeted reviewer;
 - submission checklists.
 
 The agent must not:
@@ -602,7 +734,7 @@ Freeze the source set with a date. If a source is replaced, record the replaceme
 
 Close the annual ledger before form entry:
 
-- every bank/Wise/Apple payout has a source report;
+- every Apple, Google Play, Stripe, Wise, bank, or other platform payout has a source report;
 - gross proceeds, fees, refunds, taxes, and net deposits reconcile;
 - owner contributions, distributions, loans, reimbursements, and paid-on-behalf expenses are separate;
 - foreign-currency amounts have a documented exchange-rate method;
@@ -658,7 +790,7 @@ Use the channel required by the current official instructions:
 - **Form 7004:** use the method and correct return code in current instructions, before the original due date.
 - **Full Form 1120 or Form 1040-NR:** use the current IRS e-file or paper method allowed for the specific taxpayer and tax year.
 - **New Mexico returns:** use the current NM Taxation and Revenue Department portal or paper process and the filing frequency assigned to the account.
-- **Apple/payment-platform forms:** follow the platform's current portal workflow and save the exact confirmation.
+- **Apple, Google Play, Stripe, and other payment-platform forms:** follow the platform's current portal workflow and save the exact confirmation.
 
 If browser automation or another submission tool is available, it may be used only after the user authorizes the specific action and sees the final document. The agent must pause before the irreversible submit button, final electronic certification, fax transmission, or mailing action unless the user has explicitly authorized that exact step.
 
@@ -740,7 +872,13 @@ Prefer current primary sources and record the revision/date checked:
 - IRS Form 1040-NR: https://www.irs.gov/forms-pubs/about-form-1040-nr
 - IRS Publication 515: https://www.irs.gov/forms-pubs/about-publication-515
 - IRS international taxpayers: https://www.irs.gov/individuals/international-taxpayers
-- Apple App Store Connect tax information: https://developer.apple.com/help/app-store-connect/manage-tax-information/provide-tax-information/
+- IRS nonresident aliens — sourcing of income: https://www.irs.gov/individuals/international-taxpayers/nonresident-aliens-sourcing-of-income
+- IRS foreign-source income and Form 1042-S: https://www.irs.gov/individuals/international-taxpayers/foreign-source-income-form-1042-s-reporting-not-required
+- IRS nonresident aliens — exclusions from income: https://www.irs.gov/individuals/international-taxpayers/nonresident-aliens-exclusions-from-income
+- IRS Publication 519: https://www.irs.gov/forms-pubs/about-publication-519
+- Indonesia Ministry of Finance — foreign tax credit / Kredit Pajak Luar Negeri: https://pajak.go.id/sites/default/files/02KMK03_164.htm
+- Google Play Console help and tax information: https://support.google.com/googleplay/android-developer/
+- Stripe reports and tax documentation: https://docs.stripe.com/reports
 - New Mexico business taxes: https://www.tax.newmexico.gov/businesses/
 - New Mexico business registration: https://www.tax.newmexico.gov/businesses/who-must-register-a-business/
 - New Mexico Secretary of State: https://www.sos.nm.gov/business-services/

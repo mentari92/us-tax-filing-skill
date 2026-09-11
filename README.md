@@ -14,7 +14,9 @@ The skill is designed for evidence-first self-service preparation. It helps a fo
 - Form 1040-NR and effectively connected income screening;
 - Form 7004 extension workflow;
 - New Mexico registration, gross receipts, withholding, and corporate-tax screening;
-- Apple App Store Connect and payment-platform tax-document workflows;
+- Apple App Store, Google Play Android, Stripe, Wise, and payment-platform tax-document workflows;
+- U.S. versus non-U.S. client reporting based on service location;
+- foreign-founder and Indonesian tax-resident reporting, worldwide income, and PPh Pasal 24 screening;
 - transaction-ledger, exchange-rate, owner-related transaction, and submission-proof controls;
 - low-cost founder workflow and escalation triggers.
 
@@ -43,6 +45,8 @@ Keep the actual tax documents outside the repository.
 - “Check whether Apple is asking for the right withholding form.”
 - “Prepare a pro forma Form 1120 and Form 5472 draft checklist; do not sign or submit.”
 - “Create a deadline calendar and identify missing evidence for my first tax year.”
+- “Analyze U.S. and non-U.S. client income based on where I performed the services.”
+- “Show how an Indonesian tax-resident founder should record foreign-client income and PPh Pasal 24 evidence.”
 ## AI tax-agent mode
 
 The skill can be used as a controlled AI tax-preparation agent. It can read private source records, build a classification decision tree, reconcile transactions, map form fields, create unsigned drafts, run quality checks, create a deadline calendar, guide the user through the required submission channel, and archive submission proof.
