@@ -17,6 +17,7 @@ The skill is designed for evidence-first self-service preparation. It helps a fo
 - Apple App Store, Google Play Android, Stripe, Wise, and payment-platform tax-document workflows;
 - U.S. versus non-U.S. client reporting based on service location;
 - foreign-founder and Indonesian tax-resident reporting, worldwide income, and PPh Pasal 24 screening;
+- foreign founders from any country through a configurable country-tax profile; Indonesia-specific rules are not applied to other countries automatically;
 - transaction-ledger, exchange-rate, owner-related transaction, and submission-proof controls;
 - low-cost founder workflow and escalation triggers.
 

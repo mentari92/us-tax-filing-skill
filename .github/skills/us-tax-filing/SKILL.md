@@ -12,6 +12,55 @@ This skill is a low-cost, self-service preparation system. It can help a founder
 The goal is to make a founder capable of doing the routine work themselves and paying for targeted review only when the risk justifies it. Never pressure the founder to hire a consultant for a routine evidence-collection task. Never promise that a consultant is unnecessary when the facts involve an election, U.S. trade or business, treaty position, transfer pricing, late filings, ownership changes, or material penalties.
 
 The user signs certifications and returns. The user decides whether to submit. The skill prepares evidence and explains choices.
+## International founder compatibility
+
+This skill can be used by founders from any country who own or control a U.S. company. It is not limited to Indonesian owners or New Mexico LLCs, but the United States federal rules, state rules, and owner-country rules must be analyzed as separate layers.
+
+### Required country profile
+
+For a non-U.S. founder, collect:
+
+- citizenship and every country of tax residence;
+- actual permanent residence and mailing address;
+- U.S. immigration/residency status and days physically present in the U.S.;
+- foreign tax identification number and whether the country legally issues one;
+- entity state and legal type;
+- entity tax classification and elections;
+- member/shareholder/partner ownership;
+- where services are physically performed;
+- client and payer countries;
+- foreign tax returns, withholding certificates, and foreign tax paid;
+- applicable tax treaty and residence evidence.
+
+### General U.S. layer
+
+The U.S. layer can usually be reused for foreign founders in different countries:
+
+- domestic single-member LLC default classification;
+- foreign-owned U.S. DE and Form 5472 screening;
+- pro forma or full Form 1120 path;
+- W-8BEN/W-8BEN-E/W-8ECI versus W-9;
+- Form 1040-NR and ECI screening;
+- U.S. source rules;
+- payroll, information returns, withholding, and state obligations;
+- platform and client payment reconciliation.
+
+### Country layer
+
+The owner's home-country layer is configurable, not universal. Do not reuse Indonesia's worldwide-income, SPT, NPWP/NIK, or PPh Pasal 24 instructions for a founder resident in another country. For each country, obtain current tax-authority guidance for:
+
+- tax-residence test;
+- worldwide or territorial income treatment;
+- individual versus company reporting;
+- foreign tax credit or exemption;
+- exchange-rate rules;
+- business-expense rules;
+- social contributions;
+- annual-return form and deadline;
+- treaty relief and documentation.
+
+If current country-specific rules are unavailable, complete the U.S. analysis and records package, label the home-country section **Country rules not verified**, and do not invent a local form or tax rate.
+
 
 ## Non-negotiable safety rules
 
