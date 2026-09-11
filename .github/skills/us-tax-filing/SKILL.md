@@ -146,6 +146,128 @@ Use this table as a screening tool, not as an automatic filing order.
 | New Mexico BTIN/GRT/withholding filings | State business-tax activity | Registration and filing-period checklist | Sourcing, nexus, exemption, or taxability uncertainty |
 
 Screen other international information forms only when facts support them. Do not automatically add Forms 5471, 5472, 8858, 8938, 3520, FBAR, or treaty disclosures merely because the founder is foreign or the LLC has a foreign bank account.
+## Annual filing playbook
+
+Do not assume that the same forms are filed every year. First classify the LLC and then screen the year's transactions, owner status, U.S. activity, and New Mexico activity.
+
+### Likely first-year path for a foreign-owned domestic single-member LLC
+
+If the LLC is a domestic single-member LLC, has no Form 8832 corporate election, is wholly owned by a foreign individual, and uses a calendar tax year:
+
+1. It is generally a disregarded entity for federal income tax.
+2. Its ordinary income-tax activity generally belongs on the owner's return, subject to the owner's U.S. filing triggers.
+3. It is treated as a corporation for limited section 6038A reporting purposes.
+4. Formation contributions, owner-paid expenses, reimbursements, distributions, loans, services, IP transfers, acquisition, disposition, or dissolution can create Form 5472 questions even if revenue is zero.
+5. If a reportable transaction exists, prepare Form 5472 attached to a pro forma Form 1120.
+6. If an election, corporate income, ECI, or inconsistent facts exist, stop using this shortcut and analyze the alternative return path.
+
+For a calendar-year entity whose first tax year is 2026, the practical planning date for the pro forma Form 1120/Form 5472 package is generally April 15, 2027. This is a planning estimate, not a permanent deadline. Re-check the current Form 5472 instructions for weekends, holidays, disaster relief, tax-year differences, and filing-method changes.
+
+Form 7004 is generally the extension request for eligible business returns. If accepted, it normally provides six additional months to file, so a calendar-year 2026 planning extension would generally reach October 15, 2027. An extension does not fix classification, erase a penalty, or automatically extend payment obligations. Confirm the current form code, address, fax method, and due date before submission.
+
+### Annual form matrix
+
+| Item | Annual? | When to prepare |
+|---|---|---|
+| Form 5472 | Conditional but high-priority screen | Foreign-owned U.S. DE had a reportable related-party transaction |
+| Pro forma Form 1120 | Conditional | Attached to Form 5472 for a foreign-owned U.S. DE |
+| Full Form 1120 | Conditional | LLC elected corporate treatment or is otherwise a domestic corporation |
+| Form 7004 | Optional extension | More time is needed to file an eligible return; file by original deadline |
+| Form W-8BEN | No | Give to Apple/payment platform/withholding agent; renew on validity or change-of-circumstances rules |
+| Form W-9 | No | Only when the relevant payee/owner is actually a U.S. person |
+| Form W-8BEN-E | No | Foreign entity is the beneficial owner or account holder and the form is appropriate |
+| Form W-8ECI | No | Foreign person certifies income is effectively connected with a U.S. trade or business |
+| Form 8832 | No | Entity classification election or change; do not repeat annually |
+| Form 1040-NR | Conditional | Foreign individual has a U.S. individual filing trigger, including possible U.S. trade/business or ECI |
+| Form 941/940 | Conditional | Employees or wages trigger payroll filings |
+| Form 1099-NEC/MISC | Conditional | Payment and recipient facts meet information-reporting rules |
+| New Mexico BTIN/GRT/withholding filings | Conditional and frequency-based | New Mexico business-tax activity and the filing frequency assigned by NM TRD |
+
+The form matrix must always state **May apply**, **Appears not applicable**, or **Unknown**. Do not silently turn an unknown form into “not required.”
+
+### Annual calendar
+
+Maintain these dates for each tax year:
+
+- tax-year start and end;
+- original federal due date;
+- Form 7004 deadline;
+- extension due date;
+- W-8 date provided and validity/change-of-circumstances review date;
+- New Mexico registration and assigned filing periods;
+- payroll and information-return deadlines if triggered;
+- internal ledger-close date;
+- draft-review date;
+- signature date;
+- submission date;
+- proof-of-submission storage path.
+
+### Annual founder checklist
+
+Before preparing the return package, collect:
+
+1. Formation document.
+2. EIN notice.
+3. Operating agreement.
+4. Initial resolutions.
+5. Form 8832/Form 2553 evidence or evidence that none was found.
+6. Prior tax returns, IRS notices, transcripts, and submission receipts.
+7. Owner contributions and capital records.
+8. Owner-paid LLC expenses.
+9. Reimbursements and distributions.
+10. Owner/LLC loans and interest.
+11. Apple or marketplace sales/proceeds reports.
+12. Apple or marketplace payout reports.
+13. Wise, bank, and payment-processor statements.
+14. Fees, refunds, chargebacks, withholding, and foreign exchange records.
+15. Contracts and invoices with related parties.
+16. IP, software, domain, or asset transfers.
+17. Contractor and employee records.
+18. New Mexico registration and tax account notices.
+19. Exchange-rate schedule and calculation workbook.
+20. Unsigned form drafts and the submission log.
+
+### Practical decision path
+
+```text
+Domestic single-member LLC
+  ↓
+Check Form 8832 and prior filing evidence
+  ↓
+No election confirmed or likely?
+  ↓
+Disregarded-entity analysis
+  ↓
+Foreign owner?
+  ↓
+Screen owner and related-party transactions
+  ↓
+Reportable transaction?
+  ├─ Yes → Form 5472 + pro forma Form 1120
+  └─ Unknown → finish ledger; do not assume zero
+  ↓
+Screen U.S. trade/business and ECI
+  ↓
+Screen New Mexico business-tax activity
+```
+
+### Payment and penalty control
+
+Form 5472/pro forma Form 1120 is primarily an information-reporting package for the foreign-owned U.S. DE path; do not assume that this package alone creates an income-tax payment. Conversely, do not assume that no payment is due merely because Form 5472 is informational. Analyze owner-level tax, ECI, corporate election, payroll, excise, withholding, and New Mexico obligations separately.
+
+The current Form 5472 instructions state that failure to file when required can result in a $25,000 penalty, with additional penalties if the failure continues after IRS notice. If a deadline may have been missed:
+
+- do not backdate a signature;
+- do not file a duplicate without checking filing history;
+- do not invent a zero;
+- locate prior submission proof or IRS transcript;
+- identify the correct tax year and form revision;
+- prepare the evidence package;
+- evaluate penalty-relief or targeted professional-review options.
+
+### Mentarich private-records rule
+
+For a user's private Mentarich LLC workspace, the skill may use a local `PRIVATE-SOURCES.txt` index and the documents it references. Do not copy EINs, residential addresses, signatures, bank data, tax notices, or PDF contents into this public skill. Use the private documents as evidence for the fact sheet, ledger, field map, and annual filing decision.
 
 ## W-8BEN field-by-field preparation
 
@@ -361,6 +483,82 @@ Recommend targeted professional review before filing when any of the following i
 - the owner cannot truthfully certify a form after reading its instructions.
 
 The skill must still finish the reachable work: build the fact sheet, ledger, source map, draft questions, and evidence package before recommending review.
+## AI tax-agent operating mode
+
+When invoked as an AI tax agent, operate as a controlled preparation system rather than a guessing chatbot.
+
+### Intake
+
+Ask only for facts that change the filing path. Prefer reading the private source index and local records before asking the user to repeat information. Do not ask the user to paste an EIN, SSN, ITIN, bank number, or complete tax document into chat when the local file is available.
+
+### Evidence handling
+
+For every material field, record:
+
+- proposed value;
+- source file or official instruction;
+- page/line or calculation;
+- confidence status;
+- unresolved conflict;
+- form consequence.
+
+If two documents conflict, show both values, explain the conflict, and stop the affected field at **Needs source**.
+
+### Reasoning
+
+Separate:
+
+1. legal entity status;
+2. federal tax classification;
+3. withholding documentation;
+4. information-reporting obligations;
+5. income-tax return obligations;
+6. New Mexico obligations;
+7. owner-country obligations.
+
+Never use one answer, such as “the LLC has an EIN,” to resolve all seven questions.
+
+### Drafting
+
+The agent may produce:
+
+- field-by-field draft maps;
+- unsigned form drafts when the user supplies the current blank form;
+- transaction ledgers;
+- exchange-rate schedules;
+- reconciliation workbooks;
+- source and evidence indexes;
+- deadline calendars;
+- questions for Apple, IRS, New Mexico TRD, or a targeted reviewer;
+- submission checklists.
+
+The agent must not:
+
+- sign for the user;
+- certify under penalty of perjury;
+- submit or upload without explicit approval;
+- conceal uncertainty;
+- choose a treaty rate for convenience;
+- turn a draft into a “filed” status without proof.
+
+### Status transitions
+
+Use this state machine:
+
+```text
+Evidence collection
+  → Classification review
+  → Transaction reconciliation
+  → Draft form
+  → Internal quality check
+  → Ready for user review
+  → User signs and approves
+  → Submitted
+  → Proof archived
+```
+
+Any missing critical evidence moves the case back to **Evidence collection**. Any conflicting classification evidence moves it to **Escalate for targeted review**.
+
 
 ## Required response format
 

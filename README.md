@@ -41,6 +41,23 @@ Copy the same skill directory into the user's configured OMP/Agent Skills direct
 - “Check whether Apple is asking for the right withholding form.”
 - “Prepare a pro forma Form 1120 and Form 5472 draft checklist; do not sign or submit.”
 - “Create a deadline calendar and identify missing evidence for my first tax year.”
+## AI tax-agent mode
+
+The skill can be used as a controlled AI tax-preparation agent. It can read private source records, build a classification decision tree, reconcile transactions, map form fields, draft unsigned forms, create a deadline calendar, and produce a submission-proof checklist.
+
+For a likely calendar-year foreign-owned U.S. disregarded entity, it screens the annual Form 5472 plus pro forma Form 1120 path, Form 7004 extension, W-8/W-9 status, Form 1040-NR triggers, and New Mexico filing obligations. It does not sign, certify, submit, or hide unresolved facts.
+
+## Annual self-service workflow
+
+1. Close the transaction ledger.
+2. Confirm entity classification and Form 8832 evidence.
+3. Screen owner and related-party transactions.
+4. Reconcile Apple/payment/bank records.
+5. Map each applicable form field to evidence.
+6. Review the deadline and current filing method.
+7. Produce an unsigned draft and risk gate.
+8. Obtain user approval, signature, and submission proof.
+
 
 ## Self-service principle
 
